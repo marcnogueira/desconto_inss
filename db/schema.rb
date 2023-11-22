@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_22_161328) do
+ActiveRecord::Schema.define(version: 2023_11_22_195552) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2023_11_22_161328) do
     t.string "salary_band"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["cpf"], name: "index_proponents_on_cpf", unique: true
   end
 
   add_foreign_key "addresses", "proponents"

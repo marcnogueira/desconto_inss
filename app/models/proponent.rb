@@ -6,7 +6,7 @@ class Proponent < ApplicationRecord
 
   validates :full_name, presence: true
   validates :salary, presence: true
-  validates :cpf, presence: true, cpf: true
+  validates :cpf, presence: true, cpf: true, uniqueness: true
   validates :email, presence: true, email: true
   validates :birth, presence: true, birth: true
 end

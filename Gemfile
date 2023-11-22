@@ -25,6 +25,11 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'net-http'
 
+#factory and faker gems
+gem 'cpf_faker'
+gem 'factory_bot_rails'
+gem 'faker'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -37,9 +42,6 @@ group :development, :test do
 end
 
 group :test do
-  gem 'cpf_faker'
-  gem 'factory_bot_rails'
-  gem 'faker'
   gem 'rspec-rails', '~> 4.0.1'
   gem 'shoulda-matchers', '~> 5.0'
 end
