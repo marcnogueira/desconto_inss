@@ -25,7 +25,7 @@ Com as novas alíquotas e a nova forma de cálculo progressivo, o desconto do IN
 Entre cada parcela, o cálculo é feito considerando o máximo e o mínimo destas e a alíquota a ser aplicada. Enquanto o valor do salário não é atingido, é considerado o teto da faixa salarial.
 
 Veja como fica o cálculo para um salário de R$ 3.000,00 como exemplo, que se encontra na 3a faixa:
-  
+
   ● 1a faixa salarial: 1.045,00 x 0,075 = 78,37
   ● 2a faixa salarial: [2.089,60 - 1.045,00] x 0,09 = 1.044,60 x 0,09 = 94,01
   ● Faixa que atinge o salário: [3.000,00 - 2.089,60] x 0,12 = 910,40 x 0,12 = 109,24

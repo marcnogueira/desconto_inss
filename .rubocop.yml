@@ -1,4 +1,8 @@
-require: [rubocop-rails, rubocop-factory_bot, rubocop-rspec]
+require: 
+  - 'rubocop-rails'
+  - 'rubocop-factory_bot'
+  - 'rubocop-rspec'
+  - 'rubocop-md'
 
 Metrics/BlockLength:
   AllowedMethods: ['describe', 'context']
@@ -8,3 +12,11 @@ Style/Documentation:
 
 AllCops:
   NewCops: enable
+
+Markdown:
+  WarnInvalid: true
+  Autodetect: true
+
+Lint/Void:
+  Exclude:
+    - '*.md'
