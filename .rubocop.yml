@@ -1,0 +1,7 @@
+require: [rubocop-rails, rubocop-factory_bot, rubocop-rspec]
+
+Metrics/BlockLength:
+  AllowedMethods: ['describe', 'context']
+
+Style/Documentation:
+  Enabled: false

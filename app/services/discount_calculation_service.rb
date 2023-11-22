@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DiscountCalculationService
   attr_reader :discount, :salary, :aliquot, :salary_band
 
@@ -14,5 +16,4 @@ class DiscountCalculationService
     @third_band.next_band = @fourth_band
     @discount, @aliquot, @salary_band = @first_band.calculate(@salary, 0)
   end
-
 end

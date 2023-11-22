@@ -1,14 +1,15 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 # TODO: criar exemplos adicionais
 RSpec.describe DiscountCalculationService, type: :model do
   describe 'valid salary' do
-
     describe 'first band' do
-      let(:service) {described_class.new(1045)}
+      let(:service) { described_class.new(1045) }
 
       it '#discount' do
-        expect(service.discount).to eql 78.37
+        expect(service.discount).to be 78.37
       end
 
       it '#salary_band' do
@@ -16,15 +17,15 @@ RSpec.describe DiscountCalculationService, type: :model do
       end
 
       it '#aliquot' do
-        expect(service.aliquot).to eql 0.075
+        expect(service.aliquot).to be 0.075
       end
     end
 
     describe 'third band' do
-      let(:service) {described_class.new(3000)}
+      let(:service) { described_class.new(3000) }
 
       it '#discount' do
-        expect(service.discount).to eql 281.62
+        expect(service.discount).to be 281.62
       end
 
       it '#salary_band' do
@@ -32,7 +33,7 @@ RSpec.describe DiscountCalculationService, type: :model do
       end
 
       it '#aliquot' do
-        expect(service.aliquot).to eql 0.12
+        expect(service.aliquot).to be 0.12
       end
     end
   end
