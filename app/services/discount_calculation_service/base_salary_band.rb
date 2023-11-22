@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module DiscountCalculationService
+class DiscountCalculationService
   class BaseSalaryBand
     attr_writer :next_band
 

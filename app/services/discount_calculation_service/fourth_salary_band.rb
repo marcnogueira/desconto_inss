@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module DiscountCalculationService
+class DiscountCalculationService
   class FourthSalaryBand < DiscountCalculationService::BaseSalaryBand
     def band_data
       { range: [3134.41, 6101.06], aliquot: 0.12 }
