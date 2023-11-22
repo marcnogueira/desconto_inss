@@ -1,0 +1,58 @@
+---
+pt-BR:
+  faker:
+    address:
+      neighborhood: [
+        "Vila Esperança",
+        "Jardim Primavera",
+        "Centro Histórico",
+        "Bairro Novo",
+        "Alto da Serra",
+        "Liberdade",
+        "Vila dos Pássaros",
+        "Parque das Flores",
+        "Praia da Esperança",
+        "Bela Vista",
+        "Jardim das Rosas",
+        "Cidade Alta",
+        "Vila Harmonia",
+        "Santa Cruz",
+        "Jardim das Águas",
+        "Laranjeiras",
+        "Vila Feliz",
+        "Monte Verde",
+        "Vila Bela",
+        "Jardim das Pedras",
+        "São Pedro",
+        "Praia Azul",
+        "Vila Serenidade",
+        "Jardim do Sol",
+        "Praia do Ouro",
+        "Nova Esperança",
+        "Vila Alegria",
+        "Vila das Flores",
+        "Jardim da Montanha",
+        "Bairro das Artes"
+      ]
+      ibge_code: [
+        '1200013',
+        '2700024',
+        '1300036',
+        '1600046',
+        '2300051',
+        '5300062',
+        '2100070',
+        '5200080',
+        '5100106',
+        '5000205',
+        '3100308',
+        '3200407',
+        '1500506',
+        '2500601',
+        '2200700',
+        '2600809',
+        '3300904',
+        '1101004',
+        '1201103',
+        '3301209'
+      ]

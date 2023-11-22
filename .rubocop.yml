@@ -6,6 +6,19 @@ require:
 
 Metrics/BlockLength:
   AllowedMethods: ['describe', 'context']
+  Exclude:
+    - "**/*_spec.rb"
+    - "db/**/*"
+
+Metrics/ModuleLength:
+  Exclude:
+    - "**/*_spec.rb"
+    - "db/**/*"
+
+Metrics/MethodLength:
+  Exclude:
+    - "**/*_spec.rb"
+    - "db/**/*"
 
 Style/Documentation:
   Enabled: false

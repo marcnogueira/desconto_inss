@@ -3,10 +3,15 @@
 require 'rails_helper'
 
 RSpec.describe Proponent do
+  describe 'associations' do
+    it { is_expected.to have_one(:address) }
+    it { is_expected.to have_many(:phones) }
+  end
+
   describe 'validations' do
     let(:proponent) { build(:proponent) }
 
-    it 'is valid with valid attributes' do
+    it 'valid attributes' do
       expect(proponent).to be_valid
     end
 
@@ -14,6 +19,7 @@ RSpec.describe Proponent do
     it { is_expected.to validate_presence_of(:birth) }
     it { is_expected.to validate_presence_of(:cpf) }
     it { is_expected.to validate_presence_of(:email) }
+    it { is_expected.to validate_presence_of(:salary) }
     it { is_expected.not_to allow_values('555.321.444-12').for(:cpf) }
     it { is_expected.not_to allow_values('ze.da.roca.com').for(:email) }
 
