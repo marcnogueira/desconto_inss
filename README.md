@@ -26,4 +26,3 @@ As especificações podem ser encontradas em: [Especificação Funcional](especi
   ● Abordagem TDD (escreva testes, disse o mestre!);
   ● Dockerização (portátil é bom);
   ● Autenticação (desejável).
-  
