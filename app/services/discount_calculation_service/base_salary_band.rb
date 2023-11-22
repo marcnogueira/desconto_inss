@@ -2,7 +2,7 @@ class DiscountCalculationService::BaseSalaryBand
   attr_writer :next_band
 
   def calculate(salary, discount)
-    discount += (salary_or_range?(salary) - self.band_data[:range][0]).round_down(2) * self.band_data[:aliquot]
+    discount += (salary_or_range?(salary).to_f - self.band_data[:range][0]).round_down(2) * self.band_data[:aliquot]
     if last_band?(salary)
       [discount.round_down(2), self.band_data[:aliquot], class_to_string]
     else
