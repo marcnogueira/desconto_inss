@@ -13,7 +13,7 @@ RSpec.describe DiscountCalculationService, type: :model do
       end
 
       it '#salary_band' do
-        expect(service.salary_band).to eql 'first_salary_band'
+        expect(service.salary_band).to eql 'first_band'
       end
 
       it '#aliquot' do
@@ -29,7 +29,7 @@ RSpec.describe DiscountCalculationService, type: :model do
       end
 
       it '#salary_band' do
-        expect(service.salary_band).to eql 'third_salary_band'
+        expect(service.salary_band).to eql 'third_band'
       end
 
       it '#aliquot' do
