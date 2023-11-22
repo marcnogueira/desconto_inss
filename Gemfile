@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'net-http'
 
-#factory and faker gems
+# factory and faker gems
 gem 'cpf_faker'
 gem 'factory_bot_rails'
 gem 'faker'

@@ -31,8 +31,17 @@ module DescontoInss
     #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
-    # Added lib to autoload paths
-    config.autoload_paths += %W[#{config.root}/lib]
+    # Added lib / utilities to autoload paths
+    lib = root.join('lib')
+
+    config.autoload_paths << lib
+    config.eager_load_paths << lib
+
+    Rails.autoloaders.main.ignore(
+      lib.join('assets'),
+      lib.join('tasks'),
+      lib.join('generators')
+    )
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
