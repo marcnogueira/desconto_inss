@@ -12,7 +12,7 @@ gem 'pg', '~> 1.1'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
-gem 'sass-rails', '>= 6'
+# gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -35,6 +35,17 @@ gem 'money-rails'
 
 # sidekiq
 gem 'sidekiq'
+
+# bootstrap 5 and dependencies
+gem 'bootstrap', '~> 5.3.2'
+gem 'dartsass-sprockets'
+gem 'jquery-rails'
+
+# chart.js gem
+gem 'chart-js-rails'
+
+# kaminari pagination gem
+gem 'kaminari'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

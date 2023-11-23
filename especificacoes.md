@@ -26,16 +26,17 @@ Entre cada parcela, o cálculo é feito considerando o máximo e o mínimo desta
 
 Veja como fica o cálculo para um salário de R$ 3.000,00 como exemplo, que se encontra na 3a faixa:
 
-  ● 1a faixa salarial: 1.045,00 x 0,075 = 78,37
-  ● 2a faixa salarial: [2.089,60 - 1.045,00] x 0,09 = 1.044,60 x 0,09 = 94,01
-  ● Faixa que atinge o salário: [3.000,00 - 2.089,60] x 0,12 = 910,40 x 0,12 = 109,24
-  ● Total a recolher: 109,24 + 94,01 + 78,37 = 281,62
+- 1a faixa salarial: 1.045,00 x 0,075 = 78,37
+- 2a faixa salarial: [2.089,60 - 1.045,00] x 0,09 = 1.044,60 x 0,09 = 94,01
+- Faixa que atinge o salário: [3.000,00 - 2.089,60] x 0,12 = 910,40 x 0,12 = 109,24
+- Total a recolher: 109,24 + 94,01 + 78,37 = 281,62
 
 ## 3. Relatório dos funcionários
 
 Deve ser criado um relatório para exibir os funcionários agrupando-os por faixas salariais, exibindo quantos funcionários existem em cada faixa salarial, seguindo as faixas:
-  • Até R$ 1.045,00;
-  • De R$ 1.045,01 a R$ 2.089,60;
-  • De R$ 2.089,61 até R$ 3.134,40;
-  • De R$ 3.134,41 até R$ 6.101,06.
+
+- Até R$ 1.045,00;
+- De R$ 1.045,01 a R$ 2.089,60;
+- De R$ 2.089,61 até R$ 3.134,40;
+- De R$ 3.134,41 até R$ 6.101,06.
 Importante: O relatório deve exibir as informações em listagem assim como em gráfico.
