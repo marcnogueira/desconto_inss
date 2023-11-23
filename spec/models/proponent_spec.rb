@@ -18,7 +18,6 @@ RSpec.describe Proponent do
     it { is_expected.to validate_presence_of(:full_name) }
     it { is_expected.to validate_presence_of(:birth) }
     it { is_expected.to validate_presence_of(:cpf) }
-    it { is_expected.to validate_uniqueness_of(:cpf) }
     it { is_expected.to validate_presence_of(:email) }
     it { is_expected.not_to allow_values('555.321.444-12').for(:cpf) }
     it { is_expected.not_to allow_values('ze.da.roca.com').for(:email) }

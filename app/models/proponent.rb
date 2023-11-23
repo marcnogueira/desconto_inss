@@ -5,11 +5,16 @@ class Proponent < ApplicationRecord
   monetize :discount_cents, as: 'discount'
   monetize :net_salary_cents, as: 'net_salary', disable_validation: true
 
+  before_validation :parse_cpf
+  after_create :calcule_salary_discount
+
+  scope :in_process, -> { where(salary_band: :processing) }
+
   has_many :phones, dependent: :destroy
   has_one :address, dependent: :destroy
 
   validates :full_name, presence: true
-  validates :cpf, presence: true, cpf: true, uniqueness: true
+  validates :cpf, uniqueness: true, presence: true, cpf: true
   validates :email, presence: true, email: true
   validates :birth, presence: true, birth: true
 
@@ -17,5 +22,13 @@ class Proponent < ApplicationRecord
 
   def net_salary
     salary - discount
+  end
+
+  def parse_cpf
+    self.cpf = Utilities::Cpf.only_numbers cpf
+  end
+
+  def calcule_salary_discount
+    GetDiscountJob.perform_now(id)
   end
 end
