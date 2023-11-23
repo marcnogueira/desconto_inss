@@ -34,14 +34,14 @@ Um bom desafio executado em um pouco mais do que 48 horas corridas. Se fossemos 
 
 Entre os recursos implementados posso dar destaque aos seguintes pontos:
 
-- O Service Object que faz o calculo do desconto. O service recebe o salário, que pode ser um integer ou um float e usa o design template Chain Responsability para percorrer as faixas salariais e fazer o calculo. Retorna o salário como float, o desconto, o indice e a faixa salarial;
+- O Service Object que faz o calculo do desconto. O service recebe o salário, que pode ser um integer ou um float e usa o design pattern Chain Responsability para percorrer as faixas salariais e fazer o calculo. Retorna o salário como float, o desconto, o indice e a faixa salarial;
 - Endereço e telefone, esse último com STI, em classes independentes relacionadas com o proponente, mais faceis para o gerenciamento;
 - Libs com classes utilitárias para validações, mascaras ou dados gerais;
 - Utilização dos conceitos de Clean Arquiteture adaptadas as boas práticas do Ruby/Rails;
 - Rake Tasks para atualizar todos os salários ou os que não foram processados;
 - Seed com FactoryBot + Faker.
 
-Entre os pontos que poderiam melhorar e não foram implementado ficaram:
+Entre os pontos que poderiam melhorar e não foram implementados ficaram:
 
 - As views com um partial do form;
 - Fazer uma requisição websocket para atualizar o desconto do salário assim que o campo fosse preenchido;
