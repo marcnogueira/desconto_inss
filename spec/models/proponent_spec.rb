@@ -20,7 +20,6 @@ RSpec.describe Proponent do
     it { is_expected.to validate_presence_of(:cpf) }
     it { is_expected.to validate_uniqueness_of(:cpf) }
     it { is_expected.to validate_presence_of(:email) }
-    it { is_expected.to validate_presence_of(:salary) }
     it { is_expected.not_to allow_values('555.321.444-12').for(:cpf) }
     it { is_expected.not_to allow_values('ze.da.roca.com').for(:email) }
 
@@ -32,6 +31,17 @@ RSpec.describe Proponent do
     it 'not future travelers' do
       proponent.birth = 1.month.from_now
       expect(proponent).not_to be_valid
+    end
+
+    it 'never salary equal nil' do
+      proponent.salary = nil
+      expect(proponent.salary.format).to eq 'R$0,00'
+    end
+
+    it 'net salary' do
+      proponent.salary = 1500.0
+      proponent.discount = 500.0
+      expect(proponent.net_salary.format).to eq 'R$1.000,00'
     end
   end
 end

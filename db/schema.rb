@@ -43,9 +43,11 @@ ActiveRecord::Schema.define(version: 2023_11_22_195552) do
     t.string "email"
     t.date "birth"
     t.string "cpf"
-    t.decimal "salary", precision: 8, scale: 2
-    t.decimal "discount", precision: 8, scale: 2
-    t.string "salary_band"
+    t.integer "salary_cents", default: 0, null: false
+    t.string "salary_currency", default: "BRL", null: false
+    t.integer "discount_cents", default: 0, null: false
+    t.string "discount_currency", default: "BRL", null: false
+    t.integer "salary_band", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cpf"], name: "index_proponents_on_cpf", unique: true

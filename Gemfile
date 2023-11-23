@@ -30,6 +30,9 @@ gem 'cpf_faker'
 gem 'factory_bot_rails'
 gem 'faker'
 
+# money
+gem 'money-rails'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

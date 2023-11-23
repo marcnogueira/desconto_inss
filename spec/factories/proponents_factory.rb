@@ -7,6 +7,7 @@ FactoryBot.define do
     birth { Faker::Date.between(from: 110.years.ago, to: 1.day.ago) }
     cpf { Faker::CPF.number }
     salary { Faker::Number.decimal(l_digits: 4, r_digits: 2) }
+    discount { 0.0 }
 
     trait :with_address_and_phone do
       after(:create) do |proponent|
