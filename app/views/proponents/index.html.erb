@@ -1,0 +1,42 @@
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light">Proponentes</h1>
+      <p class="lead text-muted">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Salário Bruto</th>
+              <th>Salário Liquido</th>
+              <th>Controles</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @proponents.each do |proponent| %>
+              <tr>
+                <th><%= proponent.full_name %></th>
+                <th><%= proponent.salary.format %></th>
+                <th><%= proponent.net_salary.format %></th>
+                <th>
+                  <a href="#">editar</a>
+                </th>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <div class="container pagination justify-content-center">
+          <%= paginate @proponents, theme: 'bootstrap-5' %>
+        </div>
+      </p>
+      <p>
+        <a href="#" class="btn btn-primary my-2">Adicionar Proponente</a>
+      </p>
+      <h2>Gráfico</h2>
+      <div class="justify-content-center">
+        <canvas id="proponents_chart" data-labels="<%= @chart.keys.map{|k| k.to_s} %>" data-data="<%= @chart.values %>"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+

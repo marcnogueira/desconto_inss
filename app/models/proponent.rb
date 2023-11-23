@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Proponent < ApplicationRecord
+  paginates_per 5
   monetize :salary_cents, as: 'salary'
   monetize :discount_cents, as: 'discount'
   monetize :net_salary_cents, as: 'net_salary', disable_validation: true
@@ -9,6 +10,7 @@ class Proponent < ApplicationRecord
   after_create :calcule_salary_discount
 
   scope :in_process, -> { where(salary_band: :processing) }
+  scope :by_salary_band, -> (salary_band) { where(salary_band: salary_band) }
 
   has_many :phones, dependent: :destroy
   has_one :address, dependent: :destroy

@@ -16,3 +16,18 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import Chart from 'chart.js/auto';
+
+document.addEventListener('turbolinks:load', () => {
+  var ctx = document.getElementById('proponents_chart').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: JSON.parse(ctx.canvas.dataset.labels),
+      datasets: [{
+        data: JSON.parse(ctx.canvas.dataset.data),
+      }]
+    },
+  });
+})
