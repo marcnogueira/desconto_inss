@@ -45,8 +45,8 @@ gem 'jquery-rails'
 gem 'chart-js-rails'
 
 # kaminari pagination gem
-gem 'kaminari'
 gem 'bootstrap5-kaminari-views'
+gem 'kaminari'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

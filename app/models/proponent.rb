@@ -10,7 +10,7 @@ class Proponent < ApplicationRecord
   after_create :calcule_salary_discount
 
   scope :in_process, -> { where(salary_band: :processing) }
-  scope :by_salary_band, -> (salary_band) { where(salary_band: salary_band) }
+  scope :by_salary_band, ->(salary_band) { where(salary_band: salary_band) }
 
   has_many :phones, dependent: :destroy
   has_one :address, dependent: :destroy

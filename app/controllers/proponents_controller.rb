@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ProponentsController < ApplicationController
   def index
     @proponents = Proponent.order(:full_name).page(params[:page])
@@ -10,9 +12,7 @@ class ProponentsController < ApplicationController
     }
   end
 
-  def create
-  end
+  def create; end
 
-  def update
-  end
+  def update; end
 end
