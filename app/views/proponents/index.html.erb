@@ -19,7 +19,7 @@
                 <th><%= proponent.salary.format %></th>
                 <th><%= proponent.net_salary.format %></th>
                 <th>
-                  <a href="#">editar</a>
+                  <%= link_to 'edit', edit_proponent_url(proponent) %>
                 </th>
               </tr>
             <% end %>
@@ -30,7 +30,7 @@
         </div>
       </p>
       <p>
-        <a href="#" class="btn btn-primary my-2">Adicionar Proponente</a>
+        <%= link_to "Adicionar Proponente", new_proponent_url, class: "btn btn-primary my-2"  %>
       </p>
       <h2>Relatório das Faixas Salariais</h2>
       <div class="justify-content-center">
@@ -39,4 +39,3 @@
     </div>
   </div>
 </section>
-

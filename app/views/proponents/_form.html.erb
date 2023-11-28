@@ -1,12 +1,13 @@
 <%= simple_form_for @proponent, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
   <%= f.input :full_name %>
+  <%= f.input :cpf %>
   <%= f.input :email %>
-  <%= f.input :birth %>
+  <%= f.input :birth, as: :string %>
   <%= f.input :salary %>
   <%= f.input :discount, disabled: true %>
-  <%= f.input :salary_band, disabled: true %>
   <%= f.simple_fields_for :address do |a| %>
     <%= a.input :zip_code %>
+    <%= a.input :address %>
     <%= a.input :number %>
     <%= a.input :complement %>
     <%= a.input :neighborhood %>
@@ -21,6 +22,7 @@
       selected: 'Celular' %>
     <%= p.input :number %>
   <% end %>
+  <%= link_to "Cancelar", :back, class: "btn btn-danger" %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
 

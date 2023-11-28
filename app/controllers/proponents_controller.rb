@@ -16,14 +16,50 @@ class ProponentsController < ApplicationController
   end
 
   def edit
-    @proponent = Proponent.find(id)
+    @proponent = Proponent.eager_load(:address, :phones).find(params[:id])
   end
 
-  def create; end
+  def update_discount
+    discount_service = DiscountCalculationService.new(params[:salary])
+    @discount = discount_service.discount
+  end
 
-  def update; end
+  def create
+    @proponent = Proponent.new(proponent_params)
+    if @proponent.save
+      redirect_to proponents_url
+    else
+      render :new
+    end
+  end
+
+  def update
+    @proponent = Proponent.find(params[:id])
+    if @proponent.update(proponent_params)
+      redirect_to proponents_url
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @proponent = Proponent.find(params[:id])
+    @proponent.destroy!
+    redirect_to proponents_url
+  end
 
   private
 
-  def proponent_attrs; end
+  def proponent_params
+    params.require(:proponent).permit(
+      :full_name, :email, :birth, :salary, :cpf,
+      address_attributes: %i[
+        zip_code address number complement
+        neighborhood city uf
+      ],
+      phones_attributes: %i[
+        type number
+      ]
+    )
+  end
 end

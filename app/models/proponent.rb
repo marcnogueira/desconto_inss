@@ -6,7 +6,7 @@ class Proponent < ApplicationRecord
   monetize :discount_cents, as: 'discount'
   monetize :net_salary_cents, as: 'net_salary', disable_validation: true
   before_validation :parse_cpf
-  after_create :calcule_salary_discount
+  after_save :calcule_salary_discount
 
   scope :in_process, -> { where(salary_band: :processing) }
   scope :by_salary_band, ->(salary_band) { where(salary_band: salary_band) }
