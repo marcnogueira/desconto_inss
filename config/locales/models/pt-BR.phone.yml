@@ -6,5 +6,5 @@ pt-BR:
         other: Telefones
     attributes:
       phone:
-        number: "Número"
-        type: "Tipo"
+        number: "Número de telefone"
+        type: "Tipo de telefone"
