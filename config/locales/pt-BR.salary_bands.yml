@@ -1,5 +1,6 @@
 pt-BR:
   salary_bands:
+    title: 'Faixas Salariais'
     first_band: 'Primeira faixa salarial'
     second_band: 'Segunda faixa salarial'
     third_band: 'Terceira faixa salarial'

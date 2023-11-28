@@ -6,9 +6,9 @@
         <table class="table">
           <thead>
             <tr>
-              <th>Nome</th>
-              <th>Salário Bruto</th>
-              <th>Salário Liquido</th>
+              <th><%= Proponent.human_attribute_name(:name) %></th>
+              <th><%= Proponent.human_attribute_name(:salary) %></th>
+              <th><%= Proponent.human_attribute_name(:net_salary) %></th>
               <th>Controles</th>
             </tr>
           </thead>
@@ -32,7 +32,7 @@
       <p>
         <a href="#" class="btn btn-primary my-2">Adicionar Proponente</a>
       </p>
-      <h2>Gráfico</h2>
+      <h2>Relatório das Faixas Salariais</h2>
       <div class="justify-content-center">
         <canvas id="proponents_chart" data-labels="<%= @chart.keys.map{|k| k.to_s} %>" data-data="<%= @chart.values %>"></canvas>
       </div>
