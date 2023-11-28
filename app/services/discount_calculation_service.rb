@@ -16,9 +16,9 @@ class DiscountCalculationService
 
   def initialize_chained_objects
     salary_ranges = Utilities::SalariesInformation::RANGES
-    salary_ranges.keys.each do |band|
+    salary_ranges.each_key do |band|
       instance_variable_set(
-        ('@' + band.to_s),
+        "@#{band}",
         ChainedCalculation.new(salary_ranges[band])
       )
     end
@@ -26,10 +26,11 @@ class DiscountCalculationService
 
   def define_chained_relations
     regex = /\b\w+_band\b/
-    bands = instance_variables.select{|v| v.match(regex)}
+    bands = instance_variables.select { |v| v.match(regex) }
     bands.each_cons(2) do |band, next_band|
       break if band == bands.last
-      eval(band.to_s).next_band = eval(next_band.to_s)
+
+      instance_variable_get(band.to_s).next_band = instance_variable_get(next_band.to_s)
     end
   end
 end

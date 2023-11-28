@@ -21,6 +21,10 @@ Metrics/MethodLength:
     - "**/*_spec.rb"
     - "db/**/*"
 
+Layout/LineLength:
+  Exclude:
+    - "config/**/*"
+    
 Style/Documentation:
   Enabled: false
 
