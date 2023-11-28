@@ -8,7 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-//= require jquery3
+
 //= require popper
 //= require bootstrap-sprockets
 //= require Chart.min
@@ -17,17 +17,31 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+require('jquery')
+
 import Chart from 'chart.js/auto';
 
 document.addEventListener('turbolinks:load', () => {
-  var ctx = document.getElementById('proponents_chart').getContext('2d');
-  var myChart = new Chart(ctx, {
-    type: 'pie',
-    data: {
-      labels: JSON.parse(ctx.canvas.dataset.labels),
-      datasets: [{
-        data: JSON.parse(ctx.canvas.dataset.data),
-      }]
-    },
+  var ctx = document.getElementById('proponents_chart')
+  if (ctx !== null) {
+    var proponent_chart = ctx.getContext('2d');
+    new Chart(proponent_chart, {
+      type: 'pie',
+      data: {
+        labels: JSON.parse(proponent_chart.canvas.dataset.labels),
+        datasets: [{
+          data: JSON.parse(proponent_chart.canvas.dataset.data),
+        }]
+      },
+    });
+  };
+  $("#proponent_salary").on("change", function() {
+    $.ajax({
+        url: '/proponents/update_discount',
+        data: { salary: $(this).val() },
+        dataType: 'script'
+    })
   });
 })
+
+

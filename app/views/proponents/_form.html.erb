@@ -1,2 +1,28 @@
-<h1>Proponents#_form</h1>
-<p>Find me in app/views/proponents/_form.html.erb</p>
+<%= simple_form_for @proponent, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
+  <%= f.input :full_name %>
+  <%= f.input :cpf %>
+  <%= f.input :email %>
+  <%= f.input :birth, as: :string %>
+  <%= f.input :salary %>
+  <%= f.input :discount, disabled: true %>
+  <%= f.simple_fields_for :address do |a| %>
+    <%= a.input :zip_code %>
+    <%= a.input :address %>
+    <%= a.input :number %>
+    <%= a.input :complement %>
+    <%= a.input :neighborhood %>
+    <%= a.input :city %>
+    <%= a.input :uf %>
+  <% end %>
+  <%= f.simple_fields_for :phones do |p| %>
+    <%= p.input :type,
+      collection: [['CelularPhone', 'Celular'],['ComercialPhone', 'Comercial']],
+      label_method: :second,
+      value_method: :first,
+      selected: 'Celular' %>
+    <%= p.input :number %>
+  <% end %>
+  <%= link_to "Cancelar", :back, class: "btn btn-danger" %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
+

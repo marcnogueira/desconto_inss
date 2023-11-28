@@ -48,6 +48,9 @@ gem 'chart-js-rails'
 gem 'bootstrap5-kaminari-views'
 gem 'kaminari'
 
+# simple form
+gem 'simple_form'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

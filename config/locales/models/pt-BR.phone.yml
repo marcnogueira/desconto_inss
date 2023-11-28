@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      phone:
+        one: Telefone
+        other: Telefones
+    attributes:
+      phone:
+        number: "Número de telefone"
+        type: "Tipo de telefone"

@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
   # mount Sidekiq::Web in your Rails app
   mount Sidekiq::Web => '/sidekiq'
-  resources :proponents
+  resources :proponents do
+    collection do
+      get 'update_discount'
+    end
+  end
 end
