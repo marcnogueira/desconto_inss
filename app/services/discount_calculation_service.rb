@@ -16,15 +16,20 @@ class DiscountCalculationService
 
   def initialize_chained_objects
     salary_ranges = Utilities::SalariesInformation::RANGES
-    @first_band = ChainedCalculation.new(salary_ranges[:first_band])
-    @second_band = ChainedCalculation.new(salary_ranges[:second_band])
-    @third_band = ChainedCalculation.new(salary_ranges[:third_band])
-    @fourth_band = ChainedCalculation.new(salary_ranges[:fourth_band])
+    salary_ranges.keys.each do |band|
+      instance_variable_set(
+        ('@' + band.to_s),
+        ChainedCalculation.new(salary_ranges[band])
+      )
+    end
   end
 
   def define_chained_relations
-    @first_band.next_band = @second_band
-    @second_band.next_band = @third_band
-    @third_band.next_band = @fourth_band
+    regex = /\b\w+_band\b/
+    bands = instance_variables.select{|v| v.match(regex)}
+    bands.each_cons(2) do |band, next_band|
+      break if band == bands.last
+      eval(band.to_s).next_band = eval(next_band.to_s)
+    end
   end
 end
