@@ -28,14 +28,6 @@ services:
     depends_on:
       - db
       - sidekiq
-    
-  test:
-   <<: *backend
-   environment:
-     RAILS_ENV: test
-   entrypoint: ["bundle", "exec", "rspec"]
-   depends_on:
-      - db
 
   db:
     image: postgres:11.2

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 sidekiq_config = { url: 'redis://redis:6379/1' }
 
 Sidekiq.configure_server do |config|
