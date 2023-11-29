@@ -50,7 +50,7 @@ Use o gerenciador de pacotes da sua distribuição para instalar o Docker. As in
 
 ### Contruindo o banco de dados e o Seed:
 
-- Após instalar o **Docker** abra um terminal no diretório da sua aplicação (onde está localizado o arquivo `docker-compose.yml`).
+- Após instalar o **Docker** abra um terminal no diretório raiz da aplicação (onde está localizado o arquivo `docker-compose.yml`).
 - Execute os seguintes comandos:
 
 ```bash
@@ -78,7 +78,7 @@ Esses comandos por ordem farão o seguinte:
 
 ### Rodando a aplicação:
 
-Uma vez que sua aplicação esteja instalada e o banco configurado, abra um terminal no diretório da sua aplicação (onde está localizado o arquivo `docker-compose.yml`). Rode o seguinte comando:
+Uma vez que sua aplicação esteja instalada e o banco configurado, abra um terminal no diretório raiz da aplicação (onde está localizado o arquivo `docker-compose.yml`). Rode o seguinte comando:
 
 ```bash
 docker-compose up -d
@@ -185,7 +185,7 @@ Finished in 0.42939 seconds (files took 7.04 seconds to load)
 54 examples, 0 failures
 ```
 
-Os testes podem ser executados com o seguinte comando na raiz sa aplicação:
+Os testes podem ser executados com o seguinte comando na raiz da aplicação:
 
 ```bash
 docker-compose run backend bundle exec rspec spec/*
