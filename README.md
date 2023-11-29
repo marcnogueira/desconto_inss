@@ -89,7 +89,7 @@ Sua aplicação Rails estará acessível em http://0.0.0.0:3000, e o Sidekiq em 
 Para parar os contêineres, execute o seguinte comando no mesmo diretório:
 
 ```bash
-docker-compose up -d
+docker-compose down
 ```
 
 ## Testes
