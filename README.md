@@ -36,13 +36,9 @@ Essa aplicação está dockerizada, o que permite sua instalação com poucos co
 
 Se o Docker ainda não estiver instalado em seu sistema, siga as instruções adequadas para o seu sistema operacional:
 
-#### Windows:
+#### Windows ou macOS:
 
-Baixe o Docker Desktop do [site oficial do Docker](https://www.docker.com/products/docker-desktop) e siga as instruções de instalação.
-
-#### macOS:
-
-Baixe o Docker Desktop do [site oficial do Docker](https://www.docker.com/products/docker-desktop) e siga as instruções de instalação.
+Baixe o Docker Desktop do [site oficial do Docker](https://www.docker.com/products/docker-desktop) e siga as instruções de instalação para um dos sistemas.
 
 #### Linux:
 
@@ -69,7 +65,7 @@ docker-compose down
 
 Esses comandos por ordem farão o seguinte:
 
-- Fazer o build dos services;
+- Irá fazer o build dos services;
 - Subirá os containers serviços com a opcão detached, liberando o console;
 - Criará os bancos de dados necessários;
 - Fará a migração das tabelas necessárias;
