@@ -1,0 +1,28 @@
+
+FROM ruby:2.7.6
+
+RUN apt-get update -qq && apt-get install --no-install-recommends -y \
+  nodejs yarn build-essential libpq-dev postgresql-client redis-server && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+  gem update --system
+
+ENV APP_HOME /backend
+
+RUN echo "gem: --no-rdoc --no-ri" > /etc/gemrc
+
+COPY . $APP_HOME
+
+WORKDIR $APP_HOME
+
+COPY Gemfile Gemfile.lock ./
+
+RUN bundle check || bundle install --jobs 20 --retry 5
+
+COPY . .
+
+RUN chmod 755 ./dev-docker-entrypoint.sh
+
+ENTRYPOINT ["./dev-docker-entrypoint.sh"]
+
+CMD ["rails", "s", "-p", "3000", "-b", "0.0.0.0"]
