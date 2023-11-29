@@ -213,10 +213,8 @@ Entre os recursos implementados posso dar destaque aos seguintes pontos:
 Entre os pontos que poderiam melhorar e não foram implementados ficaram:
 
 - Maior cobertura de testes, principalmente nos controllers e nas views;
-- Dockerizar a aplicação, como foi sugerido;
 - Implementar a autenticação com Devise;
-- Melhorar a experiência do usuário, garantir a responsividade;
-- Criar as instruções de instalação e uso desta aplicação.
+- Melhorar a experiência do usuário, garantir a responsividade.
 
 Agradeço a oportunidade. E após a avaliação esse repositório deverá ganhar as adições sugeridas conforme surja tempo, pois é um projeto interessantissimo para o estudo.
 
