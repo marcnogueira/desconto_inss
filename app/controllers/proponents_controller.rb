@@ -52,13 +52,13 @@ class ProponentsController < ApplicationController
 
   def proponent_params
     params.require(:proponent).permit(
-      :full_name, :email, :birth, :salary, :cpf,
+      :id, :full_name, :email, :birth, :salary, :cpf,
       address_attributes: %i[
-        zip_code address number complement
+        id zip_code address number complement
         neighborhood city uf
       ],
       phones_attributes: %i[
-        type number
+        id type number
       ]
     )
   end

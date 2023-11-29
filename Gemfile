@@ -34,7 +34,8 @@ gem 'faker'
 gem 'money-rails'
 
 # sidekiq
-gem 'sidekiq'
+gem 'redis', '4.1.3'
+gem 'sidekiq', '5.2.9'
 
 # bootstrap 5 and dependencies
 gem 'bootstrap', '~> 5.3.2'

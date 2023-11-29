@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'rake'
-Rails.application.load_tasks
+require Rails.root.join('app/services/discount_calculation_service').to_s
 
 class GetDiscountJob < ApplicationJob
   def perform(proponent_id)
@@ -9,7 +9,7 @@ class GetDiscountJob < ApplicationJob
 
     return if proponent.nil?
 
-    discount_service = DiscountCalculationService.new(proponent.salary)
+    discount_service = DiscountCalculationService.new(proponent.salary.to_f)
 
     proponent.update!(
       discount: discount_service.discount,

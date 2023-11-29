@@ -33,6 +33,11 @@ class Proponent < ApplicationRecord
   end
 
   def calcule_salary_discount
-    GetDiscountJob.perform_now(id)
+    if saved_changes.keys.include? 'salary_cents'
+      Rails.logger.debug 'MUDOU!!'
+      GetDiscountJob.perform_now(id)
+    else
+      Rails.logger.debug 'Não mudou nada.'
+    end
   end
 end
